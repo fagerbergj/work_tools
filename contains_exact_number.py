@@ -34,18 +34,17 @@ def exact(r, p):
     return False
     
   for i in res:
-    if(i+len(p) <= len(r) and not is_number(r[i+len(p)])):
-      back = True;
-    if(i-1 >= 0 and not is_number(r[i-1])):
-      front = True;
-      
+    if(i + len(p) <= len(r) and not is_number(r[i+len(p)])):
+      back = True
+    if(i-1 >= -1 and not is_number(r[i-1])):
+      front = True
   return front and back
   
 
 #take input until '//' is typed
 print("input rawread, when finished type '//': ")
 rr = ""
-while not "//" in rr:
+while "//" not in rr:
 	rr += input() + "\n"
 
 #take params into dynamic array
@@ -54,4 +53,7 @@ args = input().split()
 
 #loop through args check exact match
 for n in args:
-	print(n, " contained: ", exact(rr,n))
+  if(exact(rr,n)):
+    print(n + " contained: PASS")
+  else:
+    print(n + " contained: FAILED")
