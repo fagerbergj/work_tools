@@ -46,6 +46,10 @@ def parse(s, t, u):
     print("XML CREATED AT: " + file_name)
     quit()
 
+def getFileName():
+    timestr = time.strftime("%Y%m%d-%H%M%S")
+    return tempdir + "/testlink_" + timestr + ".xml"
+
 root = Tk()
 root.withdraw()
 
@@ -56,8 +60,7 @@ if len(tempdir) > 0:
 	print ("You chose %s" % tempdir)
 
 #build file name
-timestr = time.strftime("%Y%m%d-%H%M%S")
-file_name = tempdir + "/testlink_" + timestr + ".xml"
+file_name = getFileName()
 print(file_name)
 
 #build file
