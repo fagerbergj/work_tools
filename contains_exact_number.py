@@ -23,7 +23,6 @@ def find(s, t):
     res.append(c.find(t) + amt_cut)
     amt_cut = c.find(t) + len(t)
     c = c[c.find(t) + len(t):]
-
   return res
 
 #checks to see if number is exactly included within a string
