@@ -44,18 +44,21 @@ def exact(r, p):
   
 
 #take input until '//' is typed
-print("input rawread, when finished type '//': ")
-rr = ""
-while rr[len(rr)-3:len(rr)-1] != "//":
-	rr += input() + "\n"
+def main():
+  print("input rawread, when finished type '//': ")
+  rr = ""
+  while rr[len(rr)-3:len(rr)-1] != "//":
+    rr += input() + "\n"
 
-#take params into dynamic array
-print("input parameters separated by a space: ")
-args = input().split()
+  #take params into dynamic array
+  print("input parameters separated by a space: ")
+  args = input().split()
 
-#loop through args check exact match
-for n in args:
-  if(rr.count(n) >= args.count(n) and exact(rr,n)):
-    print(n + " contained: PASS")
-  else:
-    print(n + " contained: FAILED")
+  #loop through args check exact match
+  for n in args:
+    if(rr.count(n) >= args.count(n) and exact(rr,n)):
+      print(n + " contained: PASS")
+    else:
+      print(n + " contained: FAILED")
+
+if __name__=="__main__": main()
