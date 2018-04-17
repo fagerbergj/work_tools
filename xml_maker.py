@@ -52,12 +52,10 @@ class XmlMaker():
         if not self.testerBox.get():
             tkinter.messagebox.showinfo("Tester Name Error", "Please Enter Tester Name")
             raise ValueError("Please Enter Tester Name")
-        dir = Tk()
-        dir.withdraw()
 
         #get xml file path
         currdir = os.getcwd()
-        tempdir = filedialog.askdirectory(parent=dir, initialdir=currdir, title='Please select where to save xml')
+        tempdir = filedialog.askdirectory(parent=self.root, initialdir=currdir, title='Please select where to save xml')
         if not tempdir:
             return
         if len(tempdir) > 0:
@@ -85,7 +83,7 @@ class XmlMaker():
     def focus_next_window(self, event):
         event.widget.tk_focusNext().focus()
         return("break")
-    
+        
     def on_closing(self):
         self.root.quit()
         

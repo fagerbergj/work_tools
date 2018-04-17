@@ -1,10 +1,8 @@
 .pytest_cache
 .vscode
-MasterList.xlsx
-MTTrucchis.xlsx
-SM2Trucchis.xlsx
-test.dat
-test.txt
+*.xlsx
+*.dat
+*.txt
+*.ico
 ez_route_maker.py
-ez_route_maker_test.dat
 set_compare.py
